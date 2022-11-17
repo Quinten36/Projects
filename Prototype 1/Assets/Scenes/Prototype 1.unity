@@ -552,7 +552,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed4cbb012d892c41b5b614f6a54474b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carSpeed: 7.5
+  carSpeed: 3
+  turnSpeed: 2
 --- !u!54 &570715736
 Rigidbody:
   m_ObjectHideFlags: 0
