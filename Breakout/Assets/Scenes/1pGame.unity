@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 842940619}
   m_Layer: 0
   m_Name: WallTop
-  m_TagString: Untagged
+  m_TagString: WallTop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652547642398577093, guid: 51600bcbb56f8094b912bc64833b7d0f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9816273
+      value: 0.9659259
       objectReference: {fileID: 0}
     - target: {fileID: 4652547642398577093, guid: 51600bcbb56f8094b912bc64833b7d0f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -903,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652547642398577093, guid: 51600bcbb56f8094b912bc64833b7d0f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.19080894
+      value: -0.258819
       objectReference: {fileID: 0}
     - target: {fileID: 4652547642398577093, guid: 51600bcbb56f8094b912bc64833b7d0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -915,7 +915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4652547642398577093, guid: 51600bcbb56f8094b912bc64833b7d0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 22
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7623034178482995024, guid: 51600bcbb56f8094b912bc64833b7d0f, type: 3}
       propertyPath: speed

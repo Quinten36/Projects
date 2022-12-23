@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    private float angle;
+    public float angle;
     public float speed = .7f;
     public bool busyColliding = false;
     public bool traveling = false;
@@ -22,7 +22,7 @@ public class BallController : MonoBehaviour
         //Debug.Log(r);
         //Debug.Log(angle);
         //transform.Rotate(new Vector3(0, 0, angle), Space.World);
-        transform.Rotate(new Vector3(0, 0, angle), Space.World);
+        transform.Rotate(new Vector3(0, 0, angle), Space.Self);
         traveling = true;
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Rigidbody.AddForce(transform.up * m_Thrust * Time.deltaTime);
@@ -31,7 +31,7 @@ public class BallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_Rigidbody.AddForce(transform.up * 0.005f * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,12 +44,34 @@ public class BallController : MonoBehaviour
             m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition;
 
             if (other.tag == "WallTop") {
-                
-                if (angle > 0)
+
+                if (angle > 0 && angle < 90)//tussen 0 en 190
                 {
-                    res += 90;
+                    float te = 90 - angle;
+                    Debug.Log("pos");
+                    transform.Rotate(new Vector3(0, 0, te + 90 - angle), Space.Self);
+                    angle = te + 90 - angle;
+                }
+                else if (angle < 0 && angle > -90) 
+                {
+                    float te = -90 - angle;
+                    Debug.Log(te);
+                    Debug.Log(te - 90);
+                    Debug.Log(te - 90 + angle);
+
+                    transform.rotation = Quaternion.Euler(0, 0, te - 90);
+                    
+                    Debug.Log(transform.rotation.z);
+                    angle = te - 90;
                 }
                 
+            }
+            if (other.tag == "WallLeft")
+            {
+                if (angle > 90 && angle < 180)
+                { 
+                    
+                }
             }
         }
 
@@ -65,7 +87,7 @@ public class BallController : MonoBehaviour
         m_Rigidbody.constraints = RigidbodyConstraints.None;
         //busyColliding = false;
         //transform.Rotate(, Space.World);
-        m_Rigidbody.AddTorque(transform.forward * 15 * 1);
+        m_Rigidbody.AddForce(transform.up * 5 * Time.deltaTime);
         //m_Rigidbody.AddForce(transform.up * m_Thrust * Time.deltaTime);
         //angle = res;
     }

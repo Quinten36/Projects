@@ -356,6 +356,7 @@
 "Assets/scripts/BounceController.cs"
 "Assets/scripts/GameController.cs"
 "Assets/scripts/PlayerController.cs"
+"Assets/scripts/RigidSpeed.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
